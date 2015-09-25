@@ -1,7 +1,6 @@
 from app import app
 from flask import request
-from app import models
-import json
+from app import models, db
 
 @app.route('/test', methods = ['GET'])
 def test_view():
@@ -16,12 +15,12 @@ def health():
 @app.route('/coordinates', methods=['POST'])
 def handle_coordinates():
     coordinates = request.json["coordinates"]
-    for coord in coordinate_list:
-    	coordinate = Coordinate(coord["latitude"], coord["longitude"], coord["notes"])
+    for coord in coordinates:
+    	coordinate = models.Coordinate(coord["latitude"], coord["longitude"], coord["notes"])
         print coordinate
         db.session.add(coordinate)
     db.session.commit()
     return 'Yay!', 200
 
 # Curl command to test /coordinates
-# curl -H "Content-Type: application/json" -X POST -d "{"coordinates": [{ "latitude": 101.1, "longtitude": 42.0, "notes": "yolo"},{ "latitude": 99.99, "longtitude": 12.34, "notes": "$"}]}" http://localhost:5000/coordinates
+# curl -H "Content-Type: application/json" -X POST -d '{"coordinates": [{ "latitude": 101.1, "longitude": 42.0, "notes": "yolo"},{ "latitude": 99.99, "longitude": 12.34, "notes": "$"}]}' http://localhost:5000/coordinates
