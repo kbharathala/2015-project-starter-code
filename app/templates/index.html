@@ -28,19 +28,18 @@ function initMap() {
   });
 
   {% for coordinate in coordinate_list %}
-    var infowindow = new google.maps.InfoWindow({
-        content: "{{ coordinate.notes }}"
-    });
+    <!--var infowindow = new google.maps.InfoWindow({-->
+        <!--content: "{{ coordinate.notes }}"-->
+    <!--});-->
 
     var marker = new google.maps.Marker({
       position: {lat: {{ coordinate.latitude }}, lng: {{ coordinate.longitude }}},
-      //position: myLatLng,
       map: map,
-      title: 'Hello World!'
+      title: '{{ coordinate.notes }}'
     });
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
-    });
+    <!--marker.addListener('click', function() {-->
+        <!--infowindow.open(map, marker);-->
+    <!--});-->
   {% endfor %}
 
 
