@@ -29,7 +29,7 @@ function initMap() {
 
   {% for coordinate in coordinate_list %}
     var infowindow = new google.maps.InfoWindow({
-        content: {{ coordinate.notes }}
+        content: "{{ coordinate.notes }}"
     });
 
     var marker = new google.maps.Marker({
