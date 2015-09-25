@@ -1,0 +1,5 @@
+{
+  "coordinates": [
+    { "latitude": 101.1, "longtitude": 42.0, "notes": "yolo"},
+    { "latitude": 99.99, "longtitude": 12.34, "notes": "$"}]
+}
