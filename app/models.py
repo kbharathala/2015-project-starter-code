@@ -11,5 +11,5 @@ class Coordinate(db.Model):
         self.longitude = longitude
         self.notes = notes
 
-    def __repr__(self):
-        return "Coordinate <%.2f, %.2f>" % (self.latitude, self.longitude)
+    #def __repr__(self):
+    #    return "Coordinate <%.2f, %.2f>" % (self.latitude, self.longitude)

@@ -24,7 +24,7 @@ def handle_coordinates():
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', coordinate_list = models.Coordinate.query.all())
 
 # Curl command to test /coordinates
 # curl -H "Content-Type: application/json" -X POST -d '{"coordinates": [{ "latitude": 101.1, "longitude": 42.0, "notes": "yolo"},{ "latitude": 99.99, "longitude": 12.34, "notes": "$"}]}' http://localhost:5000/coordinates
