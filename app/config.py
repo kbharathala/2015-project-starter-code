@@ -10,7 +10,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     WTF_CSRF_ENABLED = True
-    SQLALCHEMY_DATABASE_URI = 'sqllite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 class TestingConfig(Config):

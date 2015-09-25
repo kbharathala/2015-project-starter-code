@@ -7,4 +7,7 @@ app.config.from_object(app.config.from_object(config['development']))
 
 db = SQLAlchemy(app)
 
+db.create_all()
+db.session.commit()
+
 from app import views, models

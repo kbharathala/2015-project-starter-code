@@ -16,7 +16,7 @@ def health():
 @app.route('/coordinates', methods=['POST'])
 def handle_coordinates():
     coordinates = request.json["coordinates"]
-    for coordinate in coordinates:
+    for coord in coordinate_list:
     	coordinate = Coordinate(coord["latitude"], coord["longitude"], coord["notes"])
         print coordinate
         db.session.add(coordinate)
