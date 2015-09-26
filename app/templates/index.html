@@ -23,7 +23,7 @@
   <script>
 
  window.onload = function() {
-  var myLatLng = {lat: 39.952174, lng: -75.195261};
+  var myLatLng = {lat: 39.952326, lng: -75.196126};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,
     center: myLatLng
@@ -44,7 +44,7 @@
       map: map,
       title: '{{ coordinate.notes }}',
       icon: 'http://maps.google.com/mapfiles/kml/pal4/icon47.png'
-    }); 
+    });
     marker.desc = '{{ coordinate.notes }}'
     oms.addMarker(marker);
   {% endfor %}
