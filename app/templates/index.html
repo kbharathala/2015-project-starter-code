@@ -43,7 +43,7 @@
     var marker = new google.maps.Marker({
       position: {lat: {{ coordinate.latitude }}, lng: {{ coordinate.longitude }}},
       map: map,
-      title: '{{ coordinate.notes }}'
+      title: '{{ coordinate.notes }}',
       icon: 'http://maps.google.com/mapfiles/kml/paddle/orange-stars.png'
     });
     marker.desc = '{{ coordinate.notes }}'
