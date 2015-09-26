@@ -23,10 +23,9 @@
   <script>
 
  window.onload = function() {
-  var myLatLng = {lat: 39.953009, lng: -75.198246};
-
+  var myLatLng = {lat: 39.952174, lng: -75.195261};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
+    zoom: 18,
     center: myLatLng
   });
 
@@ -44,7 +43,7 @@
       position: {lat: {{ coordinate.latitude }}, lng: {{ coordinate.longitude }}},
       map: map,
       title: '{{ coordinate.notes }}',
-      icon: 'http://maps.google.com/mapfiles/kml/paddle/orange-stars.png'
+      icon: 'http://maps.google.com/mapfiles/kml/pal4/icon47.png'
     });
     marker.desc = '{{ coordinate.notes }}'
     oms.addMarker(marker);
